@@ -1,5 +1,14 @@
 # Struct
 
+## Design System
+https://www.canva.com/design/DAG54cTkBXA/DLibxdXGaKkHxchheJAigA/edit?utm_content=DAG54cTkBXA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+## Figma
+https://www.figma.com/design/Aaaz36edq8Z256vwyMNaod/SKA-Project?node-id=0-1&t=r1kOwT8smioEbQRL-1
+
+## Pitch Desk
+https://www.canva.com/design/DAG5zIxWaIw/jSmcKVZRTA2OiT54TJ6nZQ/edit?utm_content=DAG5zIxWaIw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
 
 ## Development server
