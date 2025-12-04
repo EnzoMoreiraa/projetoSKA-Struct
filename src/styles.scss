@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+/* @import './images.sccs'; */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+:root {
+
+    //cores
+    --blue: #0B0121;
+    --blue700: ;
+    --purple: #2D0487;
+    --light-gray: #ECECEC;
+    --main-gradient: linear-gradient(90deg, var(--blue), var(--purple));
+    --secondary-gradient: linear-gradient(90deg, var(--light-gray), #ECECEC80);
+    --text-color: #ffffff;
+    --light-hover: rgba(255,255,255,0.05)
+}

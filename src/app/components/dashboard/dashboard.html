@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <app-top-header></app-top-header>
+
+    <div class="cards">
+      <div class="card create" (click)="createProject()">
+        <div class="icon">+</div>
+        <h3>Criar um projeto</h3>
+        <p>Transforme e conquiste suas ideias já</p>
+        <div class="menu-dots">⋮</div>
+      </div>
+
+      <div class="card" *ngFor="let p of projects">
+        <div class="info" (click)="openProject(p.id)">
+          <h3>{{ p.name }}</h3>
+          <img src="../../..//assets/icons/folder.png" alt="">
+          <p>{{ p.files.length }} arquivos</p>
+        </div>
+
+        <div class="menu-dots" (click)="toggleMenu(p.id)">⋮</div>
+
+        <div class="popup-menu" *ngIf="openedMenu === p.id">
+          <button (click)="openProject(p.id)">Abrir</button>
+          <button (click)="renameProject(p.id)">Renomear</button>
+          <button (click)="deleteProject(p.id)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

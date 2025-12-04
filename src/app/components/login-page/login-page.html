@@ -1,0 +1,68 @@
+<div class="login-page">
+    <div class="login-card">
+        
+        <div class="left">
+            <header class="top-bar">
+                <a routerLink="/" class="back-home"><img src="../../..//assets/icons/struct-logo.png" alt="Logo" class="logo"></a>
+                
+
+                <div class="register">
+                    <span>Não possui conta ainda?</span>
+                    <button routerLink="/register" class="btn-register">Cadastre-se</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <h2 class="title">Entre em sua conta</h2>
+                <p class="subtitle">Insira seus dados para entrar</p>
+
+                <div class="providers">
+                    <button class="provider"><img src="../../..//assets/icons/apple-logo.png" alt="apple-logo"></button>
+                    <button class="provider"><img src="../../..//assets/icons/google-logo.png" alt="google-logo"></button>
+                    <button class="provider"><img src="../../..//assets/icons/microsoft-logo.png" alt="microsoft-logo"></button>
+                </div>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <form (ngSubmit)="onSubmit($event)">
+                    <label>
+                        <span class="label-text">Login</span>
+                        <input type="text" placeholder="Insira email ou usuário" [(ngModel)]="loginValue" name="login" />
+                    </label>
+
+                    <label>
+                        <span class="label-text">Senha</span>
+                        <div class="input-wrapper">
+                        <input type="password" placeholder="Insira sua senha" [(ngModel)]="passwordValue" name="password" />
+                        <img src="assets/icons/#" class="show-password" />
+                        </div>
+                    </label>
+
+                    <div class="options">
+                        <label class="remember">
+                            <input type="checkbox" [(ngModel)]="rememberMe" name="remember" />
+                            <span>Lembre-me</span>
+                        </label>
+
+                        <a href="#" class="forgot">Esqueceu a senha?</a>
+                    </div>
+
+                    <!-- botão permanece visualmente igual; agora é submit -->
+                    <button type="submit" class="btn-login">Entrar</button>
+                    </form>
+            </div>
+
+            <footer class="bottom-bar">
+                <span>&copy;2025 Enzo Moreira</span>
+                <span>PT - BR</span>
+            </footer>
+        </div>
+
+        <div class="right">
+            <div class="gradient"></div>
+        </div>
+
+    </div>
+</div>

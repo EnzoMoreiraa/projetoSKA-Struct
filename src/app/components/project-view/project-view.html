@@ -1,0 +1,56 @@
+<div class="file-popup-backdrop" *ngIf="showFilePopup" (click)="closePopup()"></div>
+
+<div class="file-popup" *ngIf="showFilePopup">
+  <h3>Adicionar arquivo</h3>
+
+  <button (click)="triggerFileInput()">Importar do computador</button>
+  <button (click)="createNewFile()">Criar novo arquivo</button>
+
+  <!-- Hidden input -->
+  <input #fileInput type="file" style="display:none" (change)="importFile($event)">
+</div>
+
+
+<div class="project-view">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <app-top-header></app-top-header>
+
+    <!-- Project name -->
+    <h1>{{ project?.name }}</h1>
+    <div class="divider"></div>
+
+    <div class="cards">
+
+      <!-- Create file -->
+      <div class="card create" (click)="openPopup()">
+        <div class="icon">+</div>
+        <h3>Adicionen ou crie um arquivo</h3>
+        <p>Comece agora</p>
+        <div class="menu-dots">⋮</div>
+      </div>
+
+      <!-- Files -->
+      <div class="card"
+           *ngFor="let file of project?.files"
+           (click)="openFile(file.id)"
+           (contextmenu)="toggleMenu($event, file.id)">
+        
+        <h3>{{ file.name }}</h3>
+        <p>{{ file.type }}</p>
+
+        <div class="menu-dots" (click)="toggleMenu($event, file.id)">⋮</div>
+
+        <!-- Popup menu -->
+        <div class="options-menu" *ngIf="openedMenu === file.id">
+          <button (click)="openFile(file.id)">Abrir</button>
+          <button (click)="renameFile(file.id)">Renomear</button>
+          <button (click)="deleteFile(file.id)">Excluir</button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>

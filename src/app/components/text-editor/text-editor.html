@@ -1,0 +1,120 @@
+<div class="text-editor">
+  <aside class="sidebar">
+    <div class="logo">
+      <a routerLink="/"><img src="../../..//assets/icons/struct-logo.png" alt="Logo"></a>
+    </div>
+
+    <nav class="menu">
+      <button class="item active">
+        <a routerLink="/dashboard"><img src="../../..//assets/icons/grid.png" alt=""></a>
+      </button>
+
+      <button class="item">
+        <img src="../../..//assets/icons/community.png" alt="">
+      </button>
+
+      <button class="item">
+        <img src="../../..//assets/icons/calendar.png" alt="">
+      </button>
+
+      <button class="item">
+        <img src="../../..//assets/icons/settings.png" alt="">
+      </button>
+    </nav>
+
+    <div class="profile">
+      <button class="item">
+        <img src="../../..//assets/icons/profile.png" alt="">
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="editor-main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="project-title">
+          <h1>{{ file?.name || 'Untitled' }}</h1>
+          <div class="meta">
+            <span>Publicado há 3 dias</span>
+            <span>• Por {{ auth.getCurrentUser()?.username || 'Você' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="btn-status">Salvo</button>
+        <button class="btn-outline" (click)="exportAsJson()">Exportar</button>
+        <button class="btn-primary" (click)="publish()">Publicar</button>
+      </div>
+    </header>
+
+    <div class="editor-wrap">
+
+      <section class="editor-card">
+
+        <div class="editor-toolbar">
+          <div class="left-tools">
+            <button class="tool">A</button>
+            <button class="tool">B</button>
+            <button class="tool">I</button>
+            <button class="tool">U</button>
+            <button class="tool">S</button>
+            <div class="divider-tool"></div>
+            <button class="tool">H1</button>
+            <button class="tool">H2</button>
+            <button class="tool">H3</button>
+          </div>
+
+          <div class="right-tools">
+            <button class="tool">IMG</button>
+            <button class="tool">&lt;&gt;</button>
+          </div>
+        </div>
+
+        <div
+          class="editor-area"
+          contenteditable="true"
+          (input)="onEditorInput($event)"
+          [innerHTML]="content"
+          role="textbox"
+          aria-multiline="true"
+        ></div>
+      </section>
+
+      <aside class="right-panels">
+        <section class="panel auto-formatting">
+          <h3>Auto-Formatação</h3>
+
+          <label>Formatação</label>
+          <select>
+            <option>Personalizada</option>
+            <option>ABNT</option>
+          </select>
+
+          <label>Texto</label>
+          <textarea placeholder="Insira seu texto aqui"></textarea>
+
+          <button class="btn-insert">Inserir</button>
+        </section>
+
+        <section class="panel auto-references">
+          <h3>URL & Referências</h3>
+
+          <label>URL</label>
+          <input type="text" placeholder="https://...">
+
+          <label>Autor(a)</label>
+          <input type="text" [value]="auth.getCurrentUser()?.username || ''">
+
+          <div class="panel-actions">
+            <button class="link">Editar Referência</button>
+            <button class="add">Adicionar Referência +</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</div>
