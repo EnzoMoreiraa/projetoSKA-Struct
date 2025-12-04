@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProjectService, Folder, FileItem } from '../../services/project.service';
 import { AuthService } from '../../services/auth.service';
 import { SidebarComponent } from '../sidebar/sidebar';
@@ -8,7 +8,7 @@ import { SidebarComponent } from '../sidebar/sidebar';
 @Component({
   selector: 'app-text-editor',
   standalone: true,
-  imports: [SidebarComponent, CommonModule],
+  imports: [SidebarComponent, CommonModule, RouterLink],
   templateUrl: './text-editor.html',
   styleUrl: './text-editor.scss'
 })

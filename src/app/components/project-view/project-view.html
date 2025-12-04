@@ -6,7 +6,6 @@
   <button (click)="triggerFileInput()">Importar do computador</button>
   <button (click)="createNewFile()">Criar novo arquivo</button>
 
-  <!-- Hidden input -->
   <input #fileInput type="file" style="display:none" (change)="importFile($event)">
 </div>
 
@@ -17,13 +16,11 @@
   <main class="content">
     <app-top-header></app-top-header>
 
-    <!-- Project name -->
     <h1>{{ project?.name }}</h1>
     <div class="divider"></div>
 
     <div class="cards">
 
-      <!-- Create file -->
       <div class="card create" (click)="openPopup()">
         <div class="icon">+</div>
         <h3>Adicionen ou crie um arquivo</h3>
@@ -31,7 +28,6 @@
         <div class="menu-dots">⋮</div>
       </div>
 
-      <!-- Files -->
       <div class="card"
            *ngFor="let file of project?.files"
            (click)="openFile(file.id)"

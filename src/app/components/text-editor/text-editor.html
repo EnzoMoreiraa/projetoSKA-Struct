@@ -1,38 +1,35 @@
 <div class="text-editor">
   <aside class="sidebar">
     <div class="logo">
-      <a routerLink="/"><img src="../../..//assets/icons/struct-logo.png" alt="Logo"></a>
+      <a routerLink="/"><img src="../../..//assets/icons/struct-logo.png" alt="Logo" /></a>
     </div>
 
     <nav class="menu">
       <button class="item active">
-        <a routerLink="/dashboard"><img src="../../..//assets/icons/grid.png" alt=""></a>
+        <a routerLink="/dashboard"><img src="../../..//assets/icons/grid.png" alt="" /></a>
       </button>
 
       <button class="item">
-        <img src="../../..//assets/icons/community.png" alt="">
+        <img src="../../..//assets/icons/community.png" alt="" />
       </button>
 
       <button class="item">
-        <img src="../../..//assets/icons/calendar.png" alt="">
+        <img src="../../..//assets/icons/calendar.png" alt="" />
       </button>
 
       <button class="item">
-        <img src="../../..//assets/icons/settings.png" alt="">
+        <img src="../../..//assets/icons/settings.png" alt="" />
       </button>
     </nav>
 
     <div class="profile">
       <button class="item">
-        <img src="../../..//assets/icons/profile.png" alt="">
+        <img src="../../..//assets/icons/profile.png" alt="" />
       </button>
     </div>
   </aside>
 
-  <!-- MAIN -->
   <div class="editor-main">
-
-    <!-- TOP BAR -->
     <header class="topbar">
       <div class="topbar-left">
         <div class="project-title">
@@ -52,9 +49,7 @@
     </header>
 
     <div class="editor-wrap">
-
       <section class="editor-card">
-
         <div class="editor-toolbar">
           <div class="left-tools">
             <button class="tool">A</button>
@@ -78,7 +73,7 @@
           class="editor-area"
           contenteditable="true"
           (input)="onEditorInput($event)"
-          [innerHTML]="content"
+          #editor
           role="textbox"
           aria-multiline="true"
         ></div>
@@ -104,10 +99,10 @@
           <h3>URL & Referências</h3>
 
           <label>URL</label>
-          <input type="text" placeholder="https://...">
+          <input type="text" placeholder="https://..." />
 
           <label>Autor(a)</label>
-          <input type="text" [value]="auth.getCurrentUser()?.username || ''">
+          <input type="text" [value]="auth.getCurrentUser()?.username || ''" />
 
           <div class="panel-actions">
             <button class="link">Editar Referência</button>
